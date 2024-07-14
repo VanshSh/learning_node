@@ -3,8 +3,18 @@ import express from 'express'
 import { todos } from './todos.js'
 const app = express()
 
-const envVariables = dotenv.config()
+// Define middleware to show the method and url of the request
+const log = (req, res, next) => {
+  console.log(`🛜 Request: {URL: ${req.url}, METHOD: ${req.method}} `)
+  next()
+}
+dotenv.config()
+
+// use middleware => we are writing it here because we want to use the middleware any request
+app.use(log)
 const PORT = process.env.PORT || 5000
+
+//
 
 app.post('/login', (req, res) => {
   res.send('Authenticated....')
@@ -26,8 +36,6 @@ app.get('/api/todos', (req, res) => {
 
 app.get('/api/todos/:id', (req, res) => {
   const { id } = req.params // Extract ID from URL parameters
-
-  console.log('Fetching todo with ID:', id) // Corrected console log
 
   const todoId = parseInt(id) // Convert ID to integer
   if (isNaN(todoId)) {
