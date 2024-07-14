@@ -1,0 +1,24 @@
+# Get all todos items
+GET http://localhost:3000/api/todos/
+
+### 
+
+# Get incompleted todo items:
+GET http://localhost:3000/api/todos/?completed=false
+
+### 
+
+# Get completed todo items:
+GET http://localhost:3000/api/todos/?completed=true
+
+
+### 
+
+# Get todo with id 2:
+GET http://localhost:3000/api/todos/2
+
+
+### 
+
+# Try to get invalid todo id
+GET http://localhost:3000/api/todos/100
