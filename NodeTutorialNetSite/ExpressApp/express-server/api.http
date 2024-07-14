@@ -22,3 +22,9 @@ GET http://localhost:3000/api/todos/2
 
 # Try to get invalid todo id
 GET http://localhost:3000/api/todos/100
+
+
+### 
+
+# Request for express validator
+GET http://localhost:3000/hi/?name=John

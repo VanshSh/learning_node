@@ -1,5 +1,6 @@
   ## To get ENV variables directly without another package
   - `node --env-file=.env myfirst.js`
+
   ## To get ENV variables using dotenv
     
   - install dotenv package
@@ -23,3 +24,6 @@
     "start": "node --watch index.js"
     },
    ```
+
+   ## To validate the input field , params , query in the request 
+  - Use the [Express validator package](https://www.javascripttutorial.net/nodejs-tutorial/express-validation/).
