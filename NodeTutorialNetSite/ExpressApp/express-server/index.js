@@ -1,10 +1,9 @@
-import dotenv from 'dotenv'
 import express from 'express'
 import { matchedData, param, query, validationResult } from 'express-validator'
 
 import { todos } from './todos.js'
 const app = express()
-dotenv.config()
+// dotenv.config()
 const PORT = process.env.PORT || 5000
 
 // Define middleware to show the method and url of the request
@@ -44,6 +43,17 @@ app.get('/api/todos', (req, res) => {
     res.send(filteredToDos)
   } else {
     res.send(todos)
+  }
+})
+
+app.get('/api/todos/:id', (req, res) => {
+  const todoId = parseInt(req.params.id)
+  const todo = todos.find((t) => t.id === todoId)
+
+  if (todo) {
+    res.status(200).json(todo)
+  } else {
+    res.status(404).json({ error: 'Todo not found' })
   }
 })
 app.get(
