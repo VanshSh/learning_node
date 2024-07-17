@@ -27,5 +27,9 @@ vend
 # Ignore all env files
 .env
 
+
+
 #Ignore config file/folder
 config/
+
+package-lock.json
