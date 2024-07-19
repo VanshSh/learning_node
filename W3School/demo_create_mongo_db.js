@@ -41,6 +41,16 @@ MongoClient.connect(url)
         console.log('😇 Find result err ', err)
       })
 
+    // ==> Delete
+    const deleteResult = collection
+      .deleteOne({ name: 'John' })
+      .then((res) => {
+        console.log('😇 L-58 Deleted ...')
+      })
+      .catch((err) => {
+        console.log('😇 L-59 Error in deleting...')
+      })
+
     // ==> Find selective
     const selectiveResult = collection
       .find({}, { projection: { _id: 0, name: 1 } })
