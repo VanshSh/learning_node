@@ -1,1 +1,1 @@
-This is a text file. I am text file.
+hello I am writing to this file
