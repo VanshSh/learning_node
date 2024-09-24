@@ -1,7 +1,7 @@
 {
   "name": "github-activity-cli-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "roadmap project",
   "main": "index.js",
   "type": "module",
   "scripts": {
